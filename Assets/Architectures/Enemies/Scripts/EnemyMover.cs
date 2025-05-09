@@ -1,33 +1,29 @@
-using System;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    
+    private Enemy _enemyComponent;
+    private float _moveSpeed;
     private Vector3 _movementDirection;
     private Rigidbody2D rb;
     private SpriteRenderer mySpriteRenderer;
-    private Animator myAnimator;
+    //private Animator myAnimator;
 
     private void Awake() {
-        Initialization();
-    }
-
-    private void Initialization()
-    {
+        _enemyComponent = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        _moveSpeed = _enemyComponent.MoveSpeed;
+        //myAnimator = GetComponent<Animator>();
     }
 
     private void FixedUpdate() {
         Move();
+        FlipFaceDirection();
     }
 
     private void Move() {
-        rb.MovePosition(transform.position + _movementDirection * _speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + _movementDirection * _moveSpeed * Time.fixedDeltaTime);
     }
 
     public void MoveTo(Vector3 movementDirection) {

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d928cb45c10434195145031265538c, type: 3}
+  m_Name: PlayerInfo
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 5
+  moveSpeed: 2.5
+  weapon: {fileID: 8510021285260795110, guid: 6c36c6fed3a1d634396a4cd77a8712ff, type: 3}

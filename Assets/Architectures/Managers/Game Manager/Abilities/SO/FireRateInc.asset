@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6de1635ad56c0245a69d692ab4f157d, type: 3}
+  m_Name: FireRateInc
+  m_EditorClassIdentifier: 
+  image: {fileID: -1002307068, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  header: Fire Rate
+  description: Increase Fire Rate by 10 %mage
+  value: 0
+  level: 1
+  perk: {fileID: 4882655680435666545, guid: e0a099a9b4be33b46be533f6c0b03eb1, type: 3}

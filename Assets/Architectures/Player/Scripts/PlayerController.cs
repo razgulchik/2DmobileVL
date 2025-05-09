@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,25 +8,22 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
-    private Vector2 movement;
+    private Vector2 _movement;
 
     private void Awake() {
         Initialization();
     }
 
-    private void Initialization() {
+    public void Initialization() {
+        _moveSpeed = GetComponentInParent<Player>().MoveSpeed;
         inputActions = new InputSystem_Actions();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnEnable() {
-        inputActions.Enable();
-    }
-    private void OnDisable() {
-        inputActions.Disable();
-    }
+    private void OnEnable() => inputActions.Enable();
+    private void OnDisable() => inputActions.Disable();
 
     private void Update() {
         RegisterInputs();
@@ -39,8 +35,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void RegisterInputs() {
-        movement = inputActions.Player.Move.ReadValue<Vector2>();
-        if(movement != Vector2.zero) {
+        _movement = inputActions.Player.Move.ReadValue<Vector2>();
+        if(_movement != Vector2.zero) {
             myAnimator.SetBool("Run", true);
         } else {
             myAnimator.SetBool("Run", false);
@@ -48,13 +44,13 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        rb.MovePosition(rb.position + movement * _moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + _movement * _moveSpeed * Time.fixedDeltaTime);
     }
 
     private void FlipFaceDirection() {
-        if (movement.x < 0) {
+        if (_movement.x < 0) {
             mySpriteRenderer.flipX = true;
-        } else if (movement.x > 0) {
+        } else if (_movement.x > 0) {
             mySpriteRenderer.flipX = false;
         }
     }
