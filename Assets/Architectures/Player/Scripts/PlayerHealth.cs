@@ -37,12 +37,12 @@ public class PlayerHealth : MonoBehaviour, IHealth
         _currentHP = _maxHP;
     }
 
-    public void TakeDamage(int damageAmount) {
+    public void TakeDamage(float damageAmount) {
         if (_isDead || !_canTakeDamage) { return; }
         
         _canTakeDamage = false;
         StartCoroutine(_flash.FlashRoutine());
-        _currentHP -= damageAmount;
+        _currentHP -= (int)damageAmount;
         OnPlayerHealthChanged?.Invoke(_currentHP);
         StartCoroutine(RecoveryAfterHitRoutine());
 
@@ -76,8 +76,13 @@ public class PlayerHealth : MonoBehaviour, IHealth
         OnMaxHPChanged.Invoke(_maxHP);
     }
 
-    private void AddHP (int value) {
+    private void AddHP(int value) {
         _currentHP = Mathf.Clamp(_currentHP + value, 0, _maxHP);
         OnPlayerHealthChanged?.Invoke(_currentHP);
+    }
+
+    public void IncreaseMaxHP(float value) {
+        _maxHP += (int)value;
+        UpdateMaxHP(_maxHP);
     }
 }

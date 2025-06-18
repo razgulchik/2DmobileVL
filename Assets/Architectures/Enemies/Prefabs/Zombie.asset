@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   enemyType: 0
-  healthPoints: 1
-  moveSpeed: 2
+  healthPoints: 3
+  moveSpeed: 1.4

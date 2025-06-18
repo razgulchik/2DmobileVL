@@ -9,7 +9,7 @@ public class Shootgun : MonoBehaviour, IWeapon
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private int _bulletCount = 5;
 
-    public int _currWeaponDamage;
+    public float _currWeaponDamage;
     public float _currWeaponRange;
     public float _currWeaponCooldown;
     public float _currBulletSpeed;
@@ -55,7 +55,17 @@ public class Shootgun : MonoBehaviour, IWeapon
         newBullet.GetComponent<Rigidbody2D>().linearVelocity = transform.right * _currBulletSpeed;
     }
 
-    public void IncreaseDamage(int value) {
-        _currWeaponDamage += value;
+    public void IncreaseDamage(float value) {
+        _currWeaponDamage += Mathf.Clamp(value, 0, 10);
+    }
+
+    public void IncreaseFireRate(float value) {
+        float reduction = weaponInfo.weaponCooldown * value;
+        _currWeaponCooldown = Mathf.Max(_currWeaponCooldown - reduction, 0f);
+    }
+
+    public void IncreaseBulletSpeed(float value) {
+        float increment = weaponInfo.bulletSpeed * value;
+        _currBulletSpeed = Mathf.Clamp(_currBulletSpeed + increment, 0f, 50f);
     }
 }

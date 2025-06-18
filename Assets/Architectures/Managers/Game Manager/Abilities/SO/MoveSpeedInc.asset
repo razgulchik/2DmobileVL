@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: -966295699, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   header: Move speed
-  description: Increase Move Speed by 5%
-  increasement: 5
+  description: Increase Move Speed by 15%
+  value: 0.15
   level: 1
+  perk: {fileID: 4968672524731252609, guid: 2cf66fb0ea7e4c045a1380c618b652a9, type: 3}

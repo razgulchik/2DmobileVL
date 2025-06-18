@@ -142,8 +142,7 @@ MonoBehaviour:
   magnetDistance: 2
   moveSpeed: 5
   acceleration: 2
-  _expAmount: 1
-  _healAmount: 1
+  _value: 0
 --- !u!50 &5406812111187725522
 Rigidbody2D:
   serializedVersion: 5

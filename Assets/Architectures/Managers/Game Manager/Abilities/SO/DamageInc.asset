@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: -762074860, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   header: Damage
-  description: + 1 damage point for Shootgun
-  value: 0
+  description: + 0.2 damage point for Shootgun
+  value: 0.2
   level: 1
   perk: {fileID: 6974270892542714726, guid: a289a24d26a41bd4d954b101baafafcc, type: 3}

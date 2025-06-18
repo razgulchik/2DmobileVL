@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: -1002307068, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   header: Fire Rate
-  description: Increase Fire Rate by 10 %mage
-  value: 0
+  description: 'Increase Fire Rate by 10% '
+  value: 0.1
   level: 1
   perk: {fileID: 4882655680435666545, guid: e0a099a9b4be33b46be533f6c0b03eb1, type: 3}

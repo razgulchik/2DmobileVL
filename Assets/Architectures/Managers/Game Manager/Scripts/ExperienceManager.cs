@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 public class ExperienceManager
 {
@@ -17,7 +16,7 @@ public class ExperienceManager
         _player.OnExpPickUp += AddExp;
         _expPoints = 0;
         _currentLevel = 0;
-        _requiredExpToLevelUp = 1;
+        _requiredExpToLevelUp = 2;
     }
 
     private void AddExp(int value) {
@@ -42,7 +41,7 @@ public class ExperienceManager
     private void LevelUp() {
         _currentLevel += 1;
         OnLevelUp?.Invoke(_currentLevel);
-        _requiredExpToLevelUp += 1;
+        _requiredExpToLevelUp += 3;
         OnRequiredExpChanged?.Invoke(_requiredExpToLevelUp);
     }
 }

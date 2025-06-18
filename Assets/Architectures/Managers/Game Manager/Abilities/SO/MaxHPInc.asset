@@ -15,5 +15,6 @@ MonoBehaviour:
   image: {fileID: 927338625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   header: Maximum HP
   description: Add 1 Health Point. You'll get stronger.
-  increasement: 1
-  level: 5
+  value: 1
+  level: 1
+  perk: {fileID: 762941440539842173, guid: 8db2a9a9f00ed5e47ac92f81b73dac30, type: 3}

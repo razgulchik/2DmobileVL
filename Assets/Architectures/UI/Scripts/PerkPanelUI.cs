@@ -14,6 +14,7 @@ public class PerkPanelUI : MonoBehaviour
         _expManager = expManager;
         gameObject.SetActive(false);
         _expManager.OnLevelUp += OpenLevelUpPanel;
+        ResetAllLevels();
     }
 
     private void OnDestroy() {
@@ -28,7 +29,6 @@ public class PerkPanelUI : MonoBehaviour
     }
 
     public void ChooseAbility(PerkSlotUI perk) {
-        Debug.Log($"Вы выбрали перк {perk.GetPerkName()}");
         perk.GetPerk()?.ApplyEffect(_player);
         gameObject.SetActive(false);
         Time.timeScale = 1f;
@@ -47,6 +47,13 @@ public class PerkPanelUI : MonoBehaviour
 
     private PerkInfo GetRandomAbility(List<PerkInfo> listOfAbilities) {
         return listOfAbilities[Random.Range(0, listOfAbilities.Count)];
+    }
+
+    private void ResetAllLevels() {
+        foreach (var item in _listOfAbilities)
+        {
+            item.perk.ResetLevel();
+        }
     }
     
 }

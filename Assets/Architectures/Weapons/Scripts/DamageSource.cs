@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DamageSource : MonoBehaviour
 {
-    private int _damageAmount;
+    private float _damageAmount;
 
-    public void Init(int damageAmount) {
+    public void Init(float damageAmount) {
         _damageAmount = damageAmount;
     }
 

@@ -5,7 +5,7 @@ public class PickupSpawner : MonoBehaviour
     [SerializeField] private GameObject _expPrefab, _hpPrefab, _magnetPrefab;
 
     public void DropItem(Player player) {
-        var randomNum = Random.Range(1, 21);
+        var randomNum = Random.Range(1, 30);
         GameObject newDrop;
         switch (randomNum)
         {

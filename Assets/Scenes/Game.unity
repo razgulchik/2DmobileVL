@@ -1055,7 +1055,6 @@ MonoBehaviour:
   _imageConteiner: {fileID: 1691291218}
   _headerContainer: {fileID: 406560501}
   _descrContainer: {fileID: 1873485229}
-  _value: 0
   _levelContainer: {fileID: 497899862}
 --- !u!114 &214643835
 MonoBehaviour:
@@ -4284,6 +4283,7 @@ MonoBehaviour:
   _experienceUI: {fileID: 23318555}
   _levelUI: {fileID: 930234922}
   _abilityPanelController: {fileID: 1424588447}
+  _waveManager: {fileID: 1780609673}
 --- !u!1 &993669361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,7 +4685,6 @@ MonoBehaviour:
   _imageConteiner: {fileID: 2056752451}
   _headerContainer: {fileID: 208710037}
   _descrContainer: {fileID: 1455240804}
-  _value: 0
   _levelContainer: {fileID: 1292427638}
 --- !u!1 &1267395442
 GameObject:
@@ -4719,6 +4718,7 @@ Transform:
   - {fileID: 939011807}
   - {fileID: 405178659}
   - {fileID: 1691849743}
+  - {fileID: 1780609672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1292427636
@@ -4952,9 +4952,11 @@ MonoBehaviour:
   - {fileID: 1265928642}
   - {fileID: 214643834}
   _listOfAbilities:
+  - {fileID: 11400000, guid: df0af9bb90198d441a0ee9d3c710947e, type: 2}
   - {fileID: 11400000, guid: a0440a92bd3febf4daabecdf834f6009, type: 2}
-  - {fileID: 11400000, guid: a0440a92bd3febf4daabecdf834f6009, type: 2}
-  - {fileID: 11400000, guid: a0440a92bd3febf4daabecdf834f6009, type: 2}
+  - {fileID: 11400000, guid: fd4ec9fa6a30a78419c1271e7a2c326d, type: 2}
+  - {fileID: 11400000, guid: 65afe6fd0f96ae94b96496f75df3e40c, type: 2}
+  - {fileID: 11400000, guid: 241f742d2dde1744db299089d134b700, type: 2}
 --- !u!1 &1455240802
 GameObject:
   m_ObjectHideFlags: 0
@@ -5393,8 +5395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6efd1e6907c9b4c867b25a73b1e23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 8573224041669293134, guid: 44cbf0b4c69df1245b2034340570046f, type: 3}
-  _enemyCount: 100
+  _enemyPrefab: {fileID: 745582017248814926, guid: c65a8c772f594d641abf62ce4e380bd8, type: 3}
+  _enemyCount: 200
   _delayBetweenSpawns: 1
 --- !u!1 &1695566515
 GameObject:
@@ -21703,6 +21705,58 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1780609671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780609672}
+  - component: {fileID: 1780609673}
+  m_Layer: 0
+  m_Name: Wave Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780609672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780609671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1267395443}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1780609673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780609671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36696b45a9772fd4fa3c1a6ff0170033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waves:
+  - {fileID: 11400000, guid: 2301ad40be231ec42a256a56dc406ea3, type: 2}
+  - {fileID: 11400000, guid: b5d82c36482110042bf2a1fbc5306257, type: 2}
+  - {fileID: 11400000, guid: b55235638718fa443a0400ab7f358320, type: 2}
+  - {fileID: 11400000, guid: 4b91ce9adb768db4ea08a74caed04dd2, type: 2}
+  - {fileID: 11400000, guid: 7803a871bd8d87044a01ce15be0b94c5, type: 2}
+  _waveLenght: 30
+  _delayBetweenSpawns: 1.5
 --- !u!1 &1811943123
 GameObject:
   m_ObjectHideFlags: 0

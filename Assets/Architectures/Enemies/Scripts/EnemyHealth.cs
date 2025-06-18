@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
         Resurrect();
     }
 
-    public void TakeDamage(int damageAmount) {
+    public void TakeDamage(float damageAmount) {
         if (_isDead) { return; }
         
         _currentHP -= damageAmount;

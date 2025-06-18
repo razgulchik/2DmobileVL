@@ -54,4 +54,9 @@ public class PlayerController : MonoBehaviour
             mySpriteRenderer.flipX = false;
         }
     }
+
+    public void IncreaseSpeed(float value) {
+        float increment = GetComponentInParent<Player>().MoveSpeed * value;
+        _moveSpeed = Mathf.Clamp(_moveSpeed + increment, 0f, 50f);
+    }
 }

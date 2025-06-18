@@ -44,5 +44,5 @@ public class EnemySpawner : MonoBehaviour
             return (value - min < max - value) ? min : max;
         }
         return value;
-    } 
+    }
 }

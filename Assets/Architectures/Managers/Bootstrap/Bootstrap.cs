@@ -11,6 +11,7 @@ public class Bootstrap : MonoBehaviour
     [SerializeField] private ExperienceUI _experienceUI;
     [SerializeField] private LevelUI _levelUI;
     [SerializeField] private PerkPanelUI _abilityPanelController;
+    [SerializeField] private WaveManager _waveManager;
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class Bootstrap : MonoBehaviour
         _levelUI.Init(experienceManager);
         _abilityPanelController.Init(experienceManager, player.GetComponent<Player>());
 
-        StartCoroutine(_enemySpawner.SpawnEnemies(player.transform));
+        //Spawn enemies
+        _waveManager.Initialization(player.transform);
+        StartCoroutine(_waveManager.SpawnWavesRoutine());
     }
 }

@@ -1,5 +1,6 @@
 public enum EnemyType
 {
     Zombie,
-    Skeleton
+    Skeleton,
+    Demon
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -9,8 +8,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float acceleration = 0.4f;
     [Header("Конкретные настройки")]
-    [SerializeField] private int _expAmount = 1;
-    [SerializeField] private int _healAmount = 1;
+    [SerializeField] private int _value = 1;
 
     private Rigidbody2D _rb;
     private Vector2 moveDirection;
@@ -52,7 +50,7 @@ public class PickUp : MonoBehaviour
         if (Vector2.Distance(transform.position, playerPos) < magnetDistance || isMagnetized) {
             isMagnetized = true;
             moveDirection = (playerPos - transform.position).normalized;
-            moveSpeed += acceleration;
+            moveSpeed = Mathf.Clamp(moveSpeed + acceleration, 1, 1000);
         }
     }
     
@@ -65,11 +63,11 @@ public class PickUp : MonoBehaviour
         switch (pickupType)
         {
             case PickupType.Expperience:
-                player.OnExpPickUp?.Invoke(_expAmount);
+                player.OnExpPickUp?.Invoke(_value);
                 break;
 
             case PickupType.Health:
-                player.OnHealthPickUp?.Invoke(_healAmount);
+                player.OnHealthPickUp?.Invoke(_value);
                 break;
             
             case PickupType.Magnet:
